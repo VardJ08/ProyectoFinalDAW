@@ -1,9 +1,17 @@
 FROM php:8.2-apache
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Habilitar mod_rewrite
+RUN a2enmod rewrite
 
+# Instalar extensiones necesarias
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Copiar el proyecto al contenedor
 COPY . /var/www/html/
 
-RUN chown -R www-data:www-data /var/www/html
+# Establecer el directorio público
+ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 
-EXPOSE 80
+RUN sed -ri 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' \
+    /etc/apache2/sites-available/*.conf \
+    /etc/apache2/apache2.conf
