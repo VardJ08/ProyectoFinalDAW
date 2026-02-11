@@ -8,13 +8,12 @@ Permite realizar operaciones CRUD sobre un catálogo de productos.
 - MySQL (XAMPP)
 - HTML, CSS, JavaScript
 - MVC
-- Docker
-- Render
-- Netlify
+- InfinityFree
 
 ## Funcionalidades
 - Crear productos
 - Listar productos
+- Ver Detalles de productos
 - Editar productos
 - Eliminar productos con confirmación
 
@@ -27,7 +26,7 @@ Importar el archivo: database/database.sql
 3. Acceder desde el navegador
 
 ## Despliegue
-- Backend: Render
-- Frontend: Netlify
+- Backend: InfinityFree
+- Frontend: InfinityFree
 
 Estudiantes: Zambrano Hidalgo Roberto - Campoverde Castillo Joel
